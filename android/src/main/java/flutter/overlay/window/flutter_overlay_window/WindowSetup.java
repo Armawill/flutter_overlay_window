@@ -15,24 +15,24 @@ public abstract class WindowSetup {
     static int flag = WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE;
     static int gravity = Gravity.CENTER;
     static BasicMessageChannel<Object> messenger = null;
-    static String overlayTitle = "Overlay is activated";
-    static String overlayContent = "Tap to edit settings or disable";
+    // static String overlayTitle = "Overlay is activated";
+    // static String overlayContent = "Tap to edit settings or disable";
     static String positionGravity = "none";
-    static int notificationVisibility = NotificationCompat.VISIBILITY_PRIVATE;
+    // static int notificationVisibility = NotificationCompat.VISIBILITY_PRIVATE;
     static boolean enableDrag = false;
 
 
-    static void setNotificationVisibility(String name) {
-        if (name.equalsIgnoreCase("visibilityPublic")) {
-            notificationVisibility = NotificationCompat.VISIBILITY_PUBLIC;
-        }
-        if (name.equalsIgnoreCase("visibilitySecret")) {
-            notificationVisibility = NotificationCompat.VISIBILITY_SECRET;
-        }
-        if (name.equalsIgnoreCase("visibilityPrivate")) {
-            notificationVisibility = NotificationCompat.VISIBILITY_PRIVATE;
-        }
-    }
+    // static void setNotificationVisibility(String name) {
+    //     if (name.equalsIgnoreCase("visibilityPublic")) {
+    //         notificationVisibility = NotificationCompat.VISIBILITY_PUBLIC;
+    //     }
+    //     if (name.equalsIgnoreCase("visibilitySecret")) {
+    //         notificationVisibility = NotificationCompat.VISIBILITY_SECRET;
+    //     }
+    //     if (name.equalsIgnoreCase("visibilityPrivate")) {
+    //         notificationVisibility = NotificationCompat.VISIBILITY_PRIVATE;
+    //     }
+    // }
 
     static void setFlag(String name) {
         if (name.equalsIgnoreCase("flagNotFocusable") || name.equalsIgnoreCase("defaultFlag")) {

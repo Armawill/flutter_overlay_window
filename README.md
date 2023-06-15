@@ -64,8 +64,8 @@ void overlayMain() {
  /// `width` the overlay width and default is [overlaySizeFill]
  /// `OverlayAlignment` the alignment postion on screen and default is [OverlayAlignment.center]
  /// `OverlayFlag` the overlay flag and default is [OverlayFlag.defaultFlag]
- /// `overlayTitle` the notification message and default is "overlay activated"
- /// `overlayContent` the notification message
+ <!-- /// `overlayTitle` the notification message and default is "overlay activated"
+ /// `overlayContent` the notification message -->
  /// `enableDrag` to enable/disable dragging the overlay over the screen and default is "false"
  /// `positionGravity` the overlay postion after drag and default is [PositionGravity.none]
  await FlutterOverlayWindow.showOverlay();

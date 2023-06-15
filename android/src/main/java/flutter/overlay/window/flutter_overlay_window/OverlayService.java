@@ -232,7 +232,7 @@ public class OverlayService extends Service implements View.OnTouchListener {
 
     @Override
     public void onCreate() {
-        createNotificationChannel();
+        // createNotificationChannel();
         Intent notificationIntent = new Intent(this, FlutterOverlayWindowPlugin.class);
         int pendingFlags;
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.S) {
@@ -243,28 +243,28 @@ public class OverlayService extends Service implements View.OnTouchListener {
         PendingIntent pendingIntent = PendingIntent.getActivity(this,
                 0, notificationIntent, pendingFlags);
         final int notifyIcon = getDrawableResourceId("mipmap", "launcher");
-        Notification notification = new NotificationCompat.Builder(this, OverlayConstants.CHANNEL_ID)
-                .setContentTitle(WindowSetup.overlayTitle)
-                .setContentText(WindowSetup.overlayContent)
-                .setSmallIcon(notifyIcon == 0 ? R.drawable.notification_icon : notifyIcon)
-                .setContentIntent(pendingIntent)
-                .setVisibility(WindowSetup.notificationVisibility)
-                .build();
-        startForeground(OverlayConstants.NOTIFICATION_ID, notification);
+        // Notification notification = new NotificationCompat.Builder(this, OverlayConstants.CHANNEL_ID)
+        //         .setContentTitle(WindowSetup.overlayTitle)
+        //         .setContentText(WindowSetup.overlayContent)
+        //         .setSmallIcon(notifyIcon == 0 ? R.drawable.notification_icon : notifyIcon)
+        //         .setContentIntent(pendingIntent)
+        //         .setVisibility(WindowSetup.notificationVisibility)
+        //         .build();
+        // startForeground(OverlayConstants.NOTIFICATION_ID, notification);
     }
 
-    private void createNotificationChannel() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            NotificationChannel serviceChannel = new NotificationChannel(
-                    OverlayConstants.CHANNEL_ID,
-                    "Foreground Service Channel",
-                    NotificationManager.IMPORTANCE_DEFAULT
-            );
-            NotificationManager manager = getSystemService(NotificationManager.class);
-            assert manager != null;
-            manager.createNotificationChannel(serviceChannel);
-        }
-    }
+    // private void createNotificationChannel() {
+    //     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+    //         NotificationChannel serviceChannel = new NotificationChannel(
+    //                 OverlayConstants.CHANNEL_ID,
+    //                 "Foreground Service Channel",
+    //                 NotificationManager.IMPORTANCE_DEFAULT
+    //         );
+    //         NotificationManager manager = getSystemService(NotificationManager.class);
+    //         assert manager != null;
+    //         manager.createNotificationChannel(serviceChannel);
+    //     }
+    // }
 
     private int getDrawableResourceId(String resType, String name) {
         return getApplicationContext().getResources().getIdentifier(String.format("ic_%s", name), resType, getApplicationContext().getPackageName());
