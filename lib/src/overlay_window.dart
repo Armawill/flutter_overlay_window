@@ -25,8 +25,8 @@ class FlutterOverlayWindow {
   /// `enableDrag` to enable/disable dragging the overlay over the screen and default is "false"
   /// `positionGravity` the overlay postion after drag and default is [PositionGravity.none]
   static Future<void> showOverlay({
-    int height = WindowSize.fullCover,
-    int width = WindowSize.matchParent,
+    int heightInPercents = WindowSize.fullCover,
+    int widthInPercents = WindowSize.matchParent,
     OverlayAlignment alignment = OverlayAlignment.center,
     // NotificationVisibility visibility = NotificationVisibility.visibilitySecret,
     OverlayFlag flag = OverlayFlag.defaultFlag,
@@ -38,8 +38,8 @@ class FlutterOverlayWindow {
     await _channel.invokeMethod(
       'showOverlay',
       {
-        "height": height,
-        "width": width,
+        "height": heightInPercents,
+        "width": widthInPercents,
         "alignment": alignment.name,
         "flag": flag.name,
         // "overlayTitle": overlayTitle,
